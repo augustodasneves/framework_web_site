@@ -7,9 +7,8 @@
 
 class databaseHelper{
     public function __construct() {
-        $teste;
     }
-   
+
 }
 
 ?>
