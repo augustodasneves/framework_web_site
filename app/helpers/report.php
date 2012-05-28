@@ -48,4 +48,3 @@ public function logDB(){
 }
 
 }
-?>

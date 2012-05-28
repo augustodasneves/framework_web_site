@@ -20,9 +20,11 @@
 //      define("DB_DRIVER", "dblib");
 
       //PATH ENVIROMENTS
-      define("LOCAL_PATH",$_SERVER['DOCUMENT_ROOT'].'madborges/');
+      define("NOME_SITE","madborges");
+      define("LOCAL_PATH",$_SERVER['DOCUMENT_ROOT'].'framework_web_site/');
       define("CORE_PATH", LOCAL_PATH."core/");
       define("CLASS_PATH", LOCAL_PATH."core\class/");
+      define("LIBS_PATH", LOCAL_PATH."core\libs/");
       define("UPLOAD_PATH", LOCAL_PATH."upload/");
       define("IMAGE_PATH", LOCAL_PATH."app\assets\img/");
       define("CONTROLLER_PATH", LOCAL_PATH."app\models/");
@@ -41,4 +43,3 @@
 
       //URLS
       define("URL_BASE","http://localhost:81/madborges/");
-?>

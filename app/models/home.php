@@ -36,4 +36,3 @@ $tplHelper->assinaConstantes($tpl);
 //MONTA TEMPLATE
 $tplHelper->estruturaTemplate($nameController);
 ob_end_flush();
-?>

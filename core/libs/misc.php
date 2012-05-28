@@ -5,9 +5,13 @@
           unset($pasta[1]);
 
           foreach($pasta as $arquivo){
-              if($arquivo!=".svn")
+              if($arquivo!=".svn" && is_readable($arquivo))
+                  die("vai adicionar o arquivo: ".$dir.$arquivo);
+
                 require strval($dir.$arquivo);
           }
+//          $arqRequired=get_required_files();
+//          die(var_dump($arqRequired));
     }
 
     function getConstantes(){

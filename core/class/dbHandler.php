@@ -109,4 +109,3 @@ class db extends PDO{
         $rows=$this->executeQuery($sql);
     }
 }
-?>

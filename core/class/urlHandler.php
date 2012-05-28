@@ -92,4 +92,3 @@ class urlControl{
 //        $url=$url[2];
     }
 }
-?>

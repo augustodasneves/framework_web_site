@@ -24,5 +24,3 @@ if($tplHelper->verificaTemplate($tpl,$nameController)){
 
 //MONTA TEMPLATE
 $tplHelper->estruturaTemplate($nameController);
-
-?>

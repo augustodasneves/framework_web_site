@@ -12,12 +12,17 @@
 
 class core {
     function __construct() {
+        $this->getLibs();
         $this->getClasses();
         $this->instanciaObjs();
     }
 
     public function getClasses(){
         getArquivosDir(CLASS_PATH);
+    }
+
+    public function getLibs(){
+        getArquivosDir(LIBS_PATH);
     }
 
     public function instanciaObjs(){
@@ -27,4 +32,3 @@ class core {
 
 }
 
-?>

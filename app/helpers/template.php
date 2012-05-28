@@ -81,4 +81,3 @@ class TemplateHelper {
         $template->printToScreen();
     }
 }
-?>
