@@ -27,7 +27,8 @@
       define("LIBS_PATH", LOCAL_PATH."core\libs/");
       define("UPLOAD_PATH", LOCAL_PATH."upload/");
       define("IMAGE_PATH", LOCAL_PATH."application\assets\img/");
-      define("CONTROLLER_PATH", LOCAL_PATH."application\models/");
+      define("CONTROLLER_PATH", LOCAL_PATH."application\controllers/");
+      define("MODEL_PATH", LOCAL_PATH."application\models/");
       define("VIEW_PATH", LOCAL_PATH."application/views/");
       define("HELPER_PATH", LOCAL_PATH."application\helpers/");
       define("JS_PATH", LOCAL_PATH."application\assets\js/");

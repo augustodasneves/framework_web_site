@@ -91,6 +91,5 @@ class urlControl{
     }
 
     public function defineVariaveis($uri){
-        $url=explode("-mod-",$uri);
     }
 }
