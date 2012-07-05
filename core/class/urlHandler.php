@@ -7,11 +7,14 @@
 class urlControl{
     public $pg;
     public function verifyUrl(){
+        
+        //DEFINE URL E VARIAVES PASSADAS PELA URL
         $url=$_SERVER['REQUEST_URI']!=''?$_SERVER['REQUEST_URI']:$url='home';
         $variaveis=$this->defineVariaveis($url);
         $url=explode("/",$url);
         $url=$url[2];
 
+        
         $dadosUrl=$this->buscaUrl($url);
         $this->quebraParams($dadosUrl['urlparam']);
         unset($dadosUrl['idurlcontrol'],$dadosUrl['urlparam'],$dadosUrl['newurl'],$dadosUrl['id_url_canonical']);
@@ -89,6 +92,5 @@ class urlControl{
 
     public function defineVariaveis($uri){
         $url=explode("-mod-",$uri);
-//        $url=$url[2];
     }
 }

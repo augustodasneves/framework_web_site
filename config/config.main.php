@@ -26,11 +26,11 @@
       define("CLASS_PATH", LOCAL_PATH."core\class/");
       define("LIBS_PATH", LOCAL_PATH."core\libs/");
       define("UPLOAD_PATH", LOCAL_PATH."upload/");
-      define("IMAGE_PATH", LOCAL_PATH."app\assets\img/");
-      define("CONTROLLER_PATH", LOCAL_PATH."app\models/");
-      define("VIEW_PATH", LOCAL_PATH."app/views/");
-      define("HELPER_PATH", LOCAL_PATH."app\helpers/");
-      define("JS_PATH", LOCAL_PATH."app\assets\js/");
+      define("IMAGE_PATH", LOCAL_PATH."application\assets\img/");
+      define("CONTROLLER_PATH", LOCAL_PATH."application\models/");
+      define("VIEW_PATH", LOCAL_PATH."application/views/");
+      define("HELPER_PATH", LOCAL_PATH."application\helpers/");
+      define("JS_PATH", LOCAL_PATH."application\assets\js/");
 
       // SEO
       define("DESENVOLVEDOR","Augusto das Neves");
@@ -42,4 +42,8 @@
       define("EMAIL_ADMIN","augustodasneves@hotmail.com");
 
       //URLS
-      define("URL_BASE","http://localhost:81/madborges/");
+      define("URL_BASE","http://localhost:81/framework_web_site/");
+      
+      //LOCALE
+      define("LOCALE_DEFAULT","pt-BR");
+      define("LANGUAGE_DEFAULT","pt-BR");

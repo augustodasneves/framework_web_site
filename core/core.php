@@ -1,19 +1,15 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of core
  * @author Augusto
  */
 
 class core {
+    private $url;
+    private $db;
     function __construct() {
-        $this->getLibs();
         $this->getClasses();
+        $this->getLibs();
         $this->instanciaObjs();
     }
 
@@ -26,9 +22,8 @@ class core {
     }
 
     public function instanciaObjs(){
-        $url=new urlControl();
-        $url->verifyUrl();
+        $this->url=new urlControl();
+        $this->url->verifyUrl();
     }
-
 }
 
