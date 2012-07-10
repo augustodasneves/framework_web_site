@@ -1,8 +1,8 @@
 <?php
-//FAZ O BUFFER DA PÁGINA
-ob_start();
 
-$nameController=$_POST['on'].'.tpl';
+//FAZ O BUFFER DA PÁGINA
+
+$nameView=$_POST['on'].'.tpl';
 
 //INCLUDE DE HELPERS
 getArquivosDir(HELPER_PATH);
@@ -16,5 +16,4 @@ $tpl = new TemplatePower();
 $tplHelper->assinaConstantes($tpl);
 
 //MONTA TEMPLATE
-$tplHelper->estruturaTemplate($nameController);
-ob_end_flush();
+$tplHelper->estruturaTemplate($nameView);
