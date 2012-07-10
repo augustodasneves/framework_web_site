@@ -8,23 +8,23 @@ class sessionHandler{
     private function __construct() {
         $this->startSession();
     }
-    public function startSession(){
+    public static function startSession(){
         session_start();
     }
     
-    public function setSession($key,$value){
+    public static function setSession($key,$value){
         $_SESSION[$key]=$value;
     }
     
-    public function getAllSession(){
+    public static function getAllSession(){
         return session_encode();
     }
     
-    public function existeSession($nameSession){
+    public static function existeSession($nameSession){
         return $valido=session_is_registered($nameSession)?true:false;
     }
     
-    public function endSession(){
+    public static function endSession(){
         session_destroy();
     }
 }

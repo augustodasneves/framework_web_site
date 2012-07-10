@@ -29,7 +29,7 @@ class languageHandler {
     }
 
     public function alteraLinguagem($language,$encode){
-        $_SESSION['lang']=$language;
+        sessionHandler::setSession('lang',$language);
         setlocale(LC_ALL,$language);
     }
 }
