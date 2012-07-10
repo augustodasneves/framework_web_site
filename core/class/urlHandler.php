@@ -6,8 +6,8 @@
  */
 class urlControl{
     public $pg;
+    
     public function verifyUrl(){
-        
         //DEFINE URL E VARIAVES PASSADAS PELA URL
         $url=$_SERVER['REQUEST_URI']!=''?$_SERVER['REQUEST_URI']:$url='home';
         $variaveis=$this->defineVariaveis($url);

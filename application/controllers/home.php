@@ -1,7 +1,6 @@
 <?php
 
 //FAZ O BUFFER DA PÁGINA
-
 $nameView=$_POST['on'].'.tpl';
 
 //INCLUDE DE HELPERS

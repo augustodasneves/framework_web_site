@@ -9,6 +9,6 @@ require('core/libs/template/class.TemplatePower.inc.php');
 require('core/misc.php');
 require('config/config.main.php');
 require('core/core.php');
-
+global $core;
 $core=new core;
 ?>

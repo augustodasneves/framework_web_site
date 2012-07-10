@@ -1,12 +1,9 @@
 <?php
-/**
- * Description of core
- * @author Augusto
- */
-
 class core {
-    private $url;
-    private $db;
+    public $url;
+    public $db;
+    public $language;
+    
     function __construct() {
         $this->getClasses();
         $this->getLibs();
@@ -22,8 +19,8 @@ class core {
     }
 
     public function instanciaObjs(){
+        $this->language=new languageHandler(LANGUAGE_DEFAULT);
         $this->url=new urlControl();
         $this->url->verifyUrl();
     }
 }
-
