@@ -54,8 +54,13 @@ class db extends PDO{
     }
 
         public function __construct(){
+            $this->setDb_driver(DB_DRIVER);
+            $this->setDb_host(DB_HOST);
+            $this->setDb_name(DB_NAME);
+            $this->setDb_pass(DB_PASS);
+            $this->setDb_user(DB_USER);
         try{
-            parent::__construct(DB_DRIVER.":host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME,DB_USER, DB_PASS);
+            parent::__construct($this->db_driver.":host=".$this->db_host.";port=".DB_PORT.";dbname=".$this->db_name,$this->db_user,$this->db_pass);
         }catch(PDOException $e){
             die("Não foi possível realizar a conexão com a base de dados
                     <br/>Código do erro:".$e->getCode()."
@@ -104,8 +109,10 @@ class db extends PDO{
     public function insert($table,$fields,$values){
         $fields=implode(",", $fields);
         $values=implode(",",$values);
-
+        
         $sql="INSERT INTO ".$table."(".$fields.") VALUES(".$values.")";
         $rows=$this->executeQuery($sql);
     }
+    
+    
 }

@@ -11,10 +11,10 @@ class urlControl{
         //DEFINE URL E VARIAVES PASSADAS PELA URL
         $url=$_SERVER['REQUEST_URI']!=''?$_SERVER['REQUEST_URI']:$url='home';
         $variaveis=$this->defineVariaveis($url);
+                
         $url=explode("/",$url);
         $url=$url[2];
 
-        
         $dadosUrl=$this->buscaUrl($url);
         $this->quebraParams($dadosUrl['urlparam']);
         unset($dadosUrl['idurlcontrol'],$dadosUrl['urlparam'],$dadosUrl['newurl'],$dadosUrl['id_url_canonical']);
@@ -60,9 +60,11 @@ class urlControl{
             }
         else:
             try{
-                include CONTROLLER_PATH.$this->pg.'.php';
+                $controller=$this->pg.'Controller';
+                require_once CONTROLLER_PATH.$controller.".php";
+                new $controller;
             }catch(Exception $e){
-                die();
+                die($e->getMessage());
             }
         endif;
     }
@@ -91,5 +93,8 @@ class urlControl{
     }
 
     public function defineVariaveis($uri){
+//        if(strstr()){
+//            
+//        }
     }
 }

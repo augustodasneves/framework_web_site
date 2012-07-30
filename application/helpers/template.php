@@ -49,21 +49,19 @@ class TemplateHelper {
         $instTpl->assign("keywords", $keywords);
     }
 
-    function estruturaTemplate($nameTpl) {
+    function estruturaTemplate($nameTpl,$instTpl) {
         $template = new TemplatePower(CORE_PATH . "estrutura.tpl");
-
         $header = new TemplatePower(VIEW_PATH . "include/header.tpl");
         $header->prepare();
         $this->assinaSEO($header);
         $this->adicionaScript($header, $nameTpl);
         $this->adicionaStyle($header, $nameTpl);
         $objHeader = $header->getOutputContent();
-
         $conceptual = new TemplatePower(VIEW_PATH . "include/conceitual.tpl");
         $conceptual->prepare();
         $objConceptual = $conceptual->getOutputContent();
 
-        $conteudo = new TemplatePower(VIEW_PATH . $nameTpl);
+        $conteudo = $instTpl;
         $this->assinaURLs($conteudo,urlControl::buscaTodasUrl());
         $conteudo->prepare();
         $objConteudo = $conteudo->getOutputContent();

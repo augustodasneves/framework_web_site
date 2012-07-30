@@ -4,7 +4,7 @@ class core {
     public $db;
     public $language;
     
-    function __construct() {
+    function __construct() {        
         $this->getClasses();
         $this->getLibs();
         $this->instanciaObjs();
@@ -19,6 +19,9 @@ class core {
     }
 
     public function instanciaObjs(){
+        global $system;
+        $system=$this;
+        
         $this->language=new languageHandler(LANGUAGE_DEFAULT);
         $this->url=new urlControl();
         $this->url->verifyUrl();
