@@ -26,4 +26,5 @@ class core {
         $this->url=new urlControl();
         $this->url->verifyUrl();
     }
+    
 }

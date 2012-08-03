@@ -114,5 +114,10 @@ class db extends PDO{
         $rows=$this->executeQuery($sql);
     }
     
+    public function update($table,$fieldsValues){       
+        $sql="UPDATE $table SET";
+        $rows=$this->executeQuery($sql);
+    }
+    
     
 }
