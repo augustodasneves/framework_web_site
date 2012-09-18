@@ -5,11 +5,15 @@
  * @author Augusto
  */
 class languageHandler {
-    private $language;
-    private $encode;
-    
-    public function __construct($language_default=null){
-        $this->language=$language_default;
+    public $language;
+    public $encode;
+    private $languageSource;
+    public $languageText;
+        
+    public function __construct($language_default=null,$encode_default=null){
+        $this->setLanguage($language_default);
+        $this->setEnconde($encode_default);
+        $this->setLanguageSource($language_default);
     }
     
     public function getLanguage() {
@@ -31,5 +35,16 @@ class languageHandler {
     public function alteraLinguagem($language,$encode){
         sessionHandler::setSession('lang',$language);
         setlocale(LC_ALL,$language);
+        $this->setLanguageSource($language);
     }
+    
+    public function setLanguageSource($languageSource){
+        if(is_file(I18N_PATH.$languageSource.'.php')){
+            require_once(I18N_PATH.$languageSource.'.php');
+            $this->languageText=getText();
+        }
+    }
+    
+    
+    
 }

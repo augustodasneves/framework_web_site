@@ -8,14 +8,21 @@
       //PATH ENVIROMENTS
       define("NOME_SITE","MadBorges");
       define("LOCAL_PATH",$_SERVER['DOCUMENT_ROOT'].'framework_web_site/');
-      define("CORE_PATH", LOCAL_PATH."core/");
-      define("CLASS_PATH", LOCAL_PATH."core\class/");
-      define("LIBS_PATH", LOCAL_PATH."core\libs/");
-      define("UPLOAD_PATH", LOCAL_PATH."upload/");
-      define("IMAGE_PATH", LOCAL_PATH."application\assets\img/");
-      define("CONTROLLER_PATH", LOCAL_PATH."application\controllers/");
-      define("MODEL_PATH", LOCAL_PATH."application\models/");
-      define("VIEW_PATH", LOCAL_PATH."application/views/");
-      define("HELPER_PATH", LOCAL_PATH."application\helpers/");
-      define("JS_PATH", LOCAL_PATH."application\assets\js/");
       
+      define("CORE_PATH", LOCAL_PATH."core/");
+      define("UPLOAD_PATH", LOCAL_PATH."upload/");
+      define("APPLICATION_PATH", LOCAL_PATH."application/");
+      
+      //CORE - PATHS
+      define("CLASS_PATH", CORE_PATH."class/");
+      define("LIBS_PATH", CORE_PATH."libs/");
+      define("I18N_PATH", CORE_PATH."i18n/");
+      
+      
+      //APPLICATION - PATHS
+      define("IMAGE_PATH", APPLICATION_PATH."\assets\img/");
+      define("CONTROLLER_PATH", APPLICATION_PATH."controllers/");
+      define("MODEL_PATH", APPLICATION_PATH."models/");
+      define("VIEW_PATH", APPLICATION_PATH."views/");
+      define("HELPER_PATH", APPLICATION_PATH."helpers/");
+      define("JS_PATH", APPLICATION_PATH."assets\js/");

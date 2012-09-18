@@ -8,6 +8,7 @@ class baseController {
         $on=$_POST['on'];
         $this->setView($on);
         $this->setModel($on);
+        $this->setSystem();
         getArquivosDir(HELPER_PATH);
     }
     
@@ -21,7 +22,7 @@ class baseController {
 
     private function setView($view) {
         $nameView=$view.".tpl";
-        $this->view=new TemplatePower(VIEW_PATH.$nameView);
+        $this->view=new Smarty();
     }
     
     private function setSystem(){
@@ -29,15 +30,14 @@ class baseController {
         $this->system=$system;
     }
     
-    public function preDispatch(){
-        
-    }
-    
     public function render(){
-        $nameView=$_POST['on'].".tpl";
+        //$nameView=sessionHandler::getSession("on").".tpl";
         $tplHelper=new TemplateHelper();
         $this->preDispatch();
         $tplHelper->estruturaTemplate($nameView,$this->view);
     }
     
+    public function preDispatch(){
+        
+    }
 }

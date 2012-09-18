@@ -1,9 +1,4 @@
 <?php
-/**
- * Description of urlControl
- *
- * @author Augusto
- */
 class urlControl{
     public $pg;
     
@@ -14,16 +9,18 @@ class urlControl{
                 
         $url=explode("/",$url);
         $url=$url[2];
-
+        
         $dadosUrl=$this->buscaUrl($url);
         $this->quebraParams($dadosUrl['urlparam']);
         unset($dadosUrl['idurlcontrol'],$dadosUrl['urlparam'],$dadosUrl['newurl'],$dadosUrl['id_url_canonical']);
         $this->defineSEO($dadosUrl);
+        
         if(!empty($_POST['on'])){
             $this->defineNovaPagina($_POST['on']);
         }else{
             $this->defineNovaPagina('404');
         }
+        
     }
 
     public function buscaUrl($requisicao){
@@ -93,8 +90,6 @@ class urlControl{
     }
 
     public function defineVariaveis($uri){
-//        if(strstr()){
-//            
-//        }
+        //sddsfd
     }
 }

@@ -119,5 +119,8 @@ class db extends PDO{
         $rows=$this->executeQuery($sql);
     }
     
-    
+    public function delete($table,$id=null){
+        $sql="DELETE FROM ".$table." WHERE id=".$id;
+        $this->executeQuery($sql);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
-
+      
+      //DEBUG TRUE OR FALSE
       define("DEBUG",false);
 
       //DB Constants
@@ -23,4 +24,5 @@
       
       //LOCALE
       define("LOCALE_DEFAULT","pt-BR");
+      define("ENCODE_DEFAULT","UTF-8");
       define("LANGUAGE_DEFAULT","pt-BR");

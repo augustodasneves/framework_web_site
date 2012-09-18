@@ -50,32 +50,32 @@ class TemplateHelper {
     }
 
     function estruturaTemplate($nameTpl,$instTpl) {
-        $template = new TemplatePower(CORE_PATH . "estrutura.tpl");
-        $header = new TemplatePower(VIEW_PATH . "include/header.tpl");
-        $header->prepare();
-        $this->assinaSEO($header);
-        $this->adicionaScript($header, $nameTpl);
-        $this->adicionaStyle($header, $nameTpl);
-        $objHeader = $header->getOutputContent();
-        $conceptual = new TemplatePower(VIEW_PATH . "include/conceitual.tpl");
-        $conceptual->prepare();
-        $objConceptual = $conceptual->getOutputContent();
+        
+        $template = new Smarty();
+        
+        $tplheader = new Smarty();
+                
+        $this->assinaSEO($tplheader);
+        $this->adicionaScript($tplheader, $nameTpl);
+        $this->adicionaStyle($tplheader, $nameTpl);
+        
+        $objHeader= $tplheader->fetch(VIEW_PATH . "include/header.tpl");
+        
+        $tplconceitual = new Smarty();
+        $objConceitual= $tplconceitual->fetch(VIEW_PATH . "include/conceitual.tpl");
 
-        $conteudo = $instTpl;
-        $this->assinaURLs($conteudo,urlControl::buscaTodasUrl());
-        $conteudo->prepare();
-        $objConteudo = $conteudo->getOutputContent();
+        $objConteudo = $instTpl;
+        
+        $this->assinaURLs($objConteudo,urlControl::buscaTodasUrl());
 
-        $footer = new TemplatePower(VIEW_PATH . "include/footer.tpl");
-        $footer->prepare();
-        $objFooter = $footer->getOutputContent();
+        $footer = new Smarty();
+        $objFooter = $footer->fetch(VIEW_PATH . "include/footer.tpl");
 
-        $template->assignGlobal('header', $objHeader);
-        $template->assignGlobal('conceptual', $objConceptual);
-        $template->assignGlobal('conteudo', $objConteudo);
-        $template->assignGlobal('footer', $objFooter);
+        $template->assign('header', $objHeader);
+        $template->assign('conceptual', $objConceitual);
+        $template->assign('conteudo', $objConteudo);
+        $template->assign('footer', $objFooter);
 
-        $template->prepare();
-        $template->printToScreen();
+        $template->print();
     }
 }

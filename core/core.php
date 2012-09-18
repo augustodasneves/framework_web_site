@@ -4,7 +4,7 @@ class core {
     public $db;
     public $language;
     
-    function __construct() {        
+    function __construct() {     
         $this->getClasses();
         $this->getLibs();
         $this->instanciaObjs();
@@ -22,9 +22,9 @@ class core {
         global $system;
         $system=$this;
         
-        $this->language=new languageHandler(LANGUAGE_DEFAULT);
+        $this->db=db::getInstance();
+        $this->language=new languageHandler(LANGUAGE_DEFAULT,ENCODE_DEFAULT);
         $this->url=new urlControl();
         $this->url->verifyUrl();
     }
-    
 }
