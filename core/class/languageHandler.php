@@ -33,7 +33,7 @@ class languageHandler {
     }
 
     public function alteraLinguagem($language,$encode){
-        sessionHandler::setSession('lang',$language);
+        session_Handler::setSession('lang',$language);
         setlocale(LC_ALL,$language);
         $this->setLanguageSource($language);
     }

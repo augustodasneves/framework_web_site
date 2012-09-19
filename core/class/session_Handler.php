@@ -16,11 +16,11 @@ class session_Handler{
     }
      
     public static function existeSession($nameSession){
-        return $valido=session_is_registered($nameSession)?true:false;
+        return $valido=empty($_SESSION['$nameSession'])?true:false;
     }
     
     public static function getSession($nameSession){
-        if(sessionHandler::existeSession($nameSession)){
+        if(session_Handler::existeSession($nameSession)){
             return $_SESSION[$nameSession];
         }
     }
