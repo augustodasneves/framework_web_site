@@ -1,4 +1,4 @@
-<?php
+<?
     function getArquivosDir($dir){
         $pasta=scandir($dir);
         unset($pasta[0]);

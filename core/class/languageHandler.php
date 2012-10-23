@@ -1,9 +1,4 @@
-<?php
-/**
- * Description of languageHandler
- *
- * @author Augusto
- */
+<?
 class languageHandler {
     public $language;
     public $encode;
@@ -21,6 +16,7 @@ class languageHandler {
     }
 
     public function setLanguage($language){
+        session_Handler::setSession('lang',$language);
         $this->language = $language;
     }
 
@@ -33,7 +29,6 @@ class languageHandler {
     }
 
     public function alteraLinguagem($language,$encode){
-        session_Handler::setSession('lang',$language);
         setlocale(LC_ALL,$language);
         $this->setLanguageSource($language);
     }
@@ -43,8 +38,5 @@ class languageHandler {
             require_once(I18N_PATH.$languageSource.'.php');
             $this->languageText=getText();
         }
-    }
-    
-    
-    
+    }    
 }

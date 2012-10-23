@@ -31,7 +31,7 @@ class baseController {
     }
     
     public function render(){
-        $nameView=  session_Handler::getSession("on").".tpl";
+        $nameView=$_GET['on'].".tpl";
         $tplHelper=new TemplateHelper();
         $this->preDispatch();
         $tplHelper->estruturaTemplate($nameView,$this->view);

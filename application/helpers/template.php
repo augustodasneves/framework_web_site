@@ -1,4 +1,4 @@
-<?php
+<?
 class TemplateHelper {
 
     function assinaSEO($instTpl) {
@@ -7,11 +7,12 @@ class TemplateHelper {
         $this->adicionaKeywords($instTpl, $_POST['keywords']);
         $instTpl->assign("revisitagoogle", REVISIT_GOOGLE);
         $instTpl->assign("desenvolvedor", DESENVOLVEDOR);
+        $instTpl->assign("publisher", DESENVOLVEDOR);
         $instTpl->assign("nomesite", TITULO_SITE);
     }
 
     public static function assinaURLs($instTpl, $arrUrls) {
-        $instTpl->assign($url['urlparam'], $url['newurl']);
+        $instTpl->assign('url', $arrUrls);
     }
 
     public static function assinaConstantes($instTpl) {
@@ -42,32 +43,28 @@ class TemplateHelper {
     }
 
     function estruturaTemplate($nameTpl,$instTpl) {
-        
-        $template = new Smarty();
-        
-        $tplheader = new Smarty();
-                
+        $tplheader = new Smarty();        
         $this->assinaSEO($tplheader);
         $this->adicionaScript($tplheader, $nameTpl);
         $this->adicionaStyle($tplheader, $nameTpl);
-        
         $objHeader= $tplheader->fetch(VIEW_PATH . "include/header.tpl");
         
         $tplconceitual = new Smarty();
         $objConceitual= $tplconceitual->fetch(VIEW_PATH . "include/conceitual.tpl");
 
         $objConteudo = $instTpl;
-        
         $this->assinaURLs($objConteudo,urlControl::buscaTodasUrl());
 
         $footer = new Smarty();
         $objFooter = $footer->fetch(VIEW_PATH . "include/footer.tpl");
-
+        
+        $template = new Smarty();
+        $template->assign('lang', session_Handler::getSession('lang'));
         $template->assign('header', $objHeader);
         $template->assign('conceptual', $objConceitual);
         $template->assign('conteudo', $objConteudo);
         $template->assign('footer', $objFooter);
-
-        $template->print();
+        
+        $template->display(CORE_PATH. "estrutura.tpl");
     }
 }

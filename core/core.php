@@ -1,4 +1,4 @@
-<?php
+<?
 class core {
     public $url;
     public $db;

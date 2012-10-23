@@ -1,4 +1,4 @@
-<html  dir="ltr" lang="{$lang}">
+<html  dir="ltr" lang="$lang">
     {$header}
     {$conceptual}
     {$conteudo}

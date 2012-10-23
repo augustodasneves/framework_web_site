@@ -6,4 +6,6 @@ require('config/config.main.php');
 require('config/config.'.ESTADO_APLICACAO.'.php');
 require('core/core.php');
 
+session_start();
+
 $core=new core();

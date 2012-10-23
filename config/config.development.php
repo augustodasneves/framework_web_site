@@ -1,6 +1,6 @@
 <?php        
       //DEBUG TRUE OR FALSE
-      define("DEBUG",true);
+      define("DEBUG",false);
 
       //DB Constants
       define("DB_HOST", "localhost");

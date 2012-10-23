@@ -1,13 +1,16 @@
-<?php
+<?
 class session_Handler{
     private function __construct() {
         $this->startSession();
     }
     public static function startSession(){
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
     }
     
     public static function setSession($key,$value){
+        session_Handler::startSession();
         $_SESSION[$key]=$value;
     }
     
@@ -20,6 +23,7 @@ class session_Handler{
     }
     
     public static function getSession($nameSession){
+        session_Handler::startSession();
         if(session_Handler::existeSession($nameSession)){
             return $_SESSION[$nameSession];
         }

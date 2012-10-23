@@ -3,6 +3,7 @@ class baseModel{
     private $db;
     private $name;
     
+    
     function __construct(){
         $this->db=db::getInstance();
         $this->setName($_POST['on']);
